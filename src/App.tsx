@@ -1,9 +1,22 @@
-import { Header } from './components';
+import { Route, Routes } from 'react-router-dom';
+import { Htag } from './components';
+import { Layout } from './layout/Layout';
+import { About, Home, NotFoundPage, Projects, Resume } from './pages';
 
 function App() {
 	return (
 		<div className='App container'>
-			<Header />
+			<Layout>
+				<Htag />
+			</Layout>
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/about' element={<About />} />
+				<Route path='/projects' element={<Projects />} />
+				<Route path='/contact' />
+				<Route path='/resume' element={<Resume />} />
+				<Route path='*' element={<NotFoundPage />} />
+			</Routes>
 		</div>
 	);
 }

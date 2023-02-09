@@ -1,11 +1,11 @@
 import { HeaderProps } from './Header.props';
 import cn from 'classnames';
-import Logo from './Logo.png';
-import HomeIcon from './home.svg';
-import ProfileIcon from './profile.svg';
-import ProjectsIcon from './projects.svg';
-import ResumeIcon from './resume.svg';
-import ContactIcon from './contact.svg';
+import Logo from '../../assets/icons/Logo.png';
+import HomeIcon from '../../assets/icons/home.svg';
+import ProfileIcon from '../../assets/icons/profile.svg';
+import ProjectsIcon from '../../assets/icons/projects.svg';
+import ResumeIcon from '../../assets/icons/resume.svg';
+import ContactIcon from '../../assets/icons/contact.svg';
 import { HandySvg } from 'handy-svg';
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 	return (
