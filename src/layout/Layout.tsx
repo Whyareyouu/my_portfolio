@@ -5,7 +5,7 @@ export const Layout = ({ children, ...props }: LayoutProps): JSX.Element => {
 	return (
 		<div {...props}>
 			<Header />
-			<main>{children}</main>
+			<main className='bg-bluedark/[0.6] rounded-xl p-3'>{children}</main>
 			<footer></footer>
 		</div>
 	);
