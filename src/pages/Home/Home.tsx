@@ -2,16 +2,17 @@ import { HomeProps } from './Home.props';
 import cn from 'classnames';
 import Room from './Room.jpg';
 import Avatar from './Avatar.jpg';
+import { Printed, Socials } from '../../components';
 export const Home = ({ className, ...props }: HomeProps): JSX.Element => {
 	return (
 		<div
 			className={cn(
 				className,
-				'flex flex-col gap-20 justify-center px-10 py-4'
+				'flex flex-col gap-10 justify-center px-10 py-4'
 			)}
 			{...props}>
 			<div className='flex justify-between gap-3'>
-				<div className='flex flex-col gap-3 text-4xl'>
+				<div className='flex flex-col gap-4 text-4xl'>
 					<h1
 						style={{
 							textShadow:
@@ -19,10 +20,10 @@ export const Home = ({ className, ...props }: HomeProps): JSX.Element => {
 						}}>
 						Hi There!
 					</h1>
-					<p className='uppercase '>
+					<p className='uppercase mb-9'>
 						I'M <span className='text-purple'>Chernov Nikita</span>
 					</p>
-					<p>Some text</p>
+					<Printed />
 				</div>
 				<img
 					src={Room}
@@ -31,7 +32,7 @@ export const Home = ({ className, ...props }: HomeProps): JSX.Element => {
 				/>
 			</div>
 			<div className='flex justify-between items-center gap-3'>
-				<div className='max-w-[620px] flex flex-col gap-4'>
+				<div className='max-w-[530px] flex flex-col gap-4'>
 					<h2 className='uppercase text-4xl'>
 						A little <span className='text-purple'>about me</span>
 					</h2>
@@ -50,6 +51,16 @@ export const Home = ({ className, ...props }: HomeProps): JSX.Element => {
 					alt='avatar'
 					className='h-[220px] w-[220px] rounded-[50%]'
 				/>
+			</div>
+			<div className='flex flex-col justify-center items-center gap-4'>
+				<h2 className='text-4xl'>Get In Touch</h2>
+				<p className='max-w-[480px] text-center'>
+					Whether you have a question or just want to say hi, I’ll try my best
+					to get back to you!
+				</p>
+				<div>
+					<Socials />
+				</div>
 			</div>
 		</div>
 	);
