@@ -9,14 +9,14 @@ export const Resume = ({ className, ...props }: ResumeProps): JSX.Element => {
 			<a
 				href={ResumeEN}
 				download
-				className='bg-purpledark max-w-[220px] rounded-md p-3 self-center'>
+				className='bg-purpledark max-w-[220px] rounded-md p-3 self-center font-bold'>
 				<button>Download resume EN</button>
 			</a>
 			<ResumeFile />
 			<a
 				href={ResumeRU}
 				download
-				className='bg-purpledark max-w-[220px] rounded-md p-3 self-center'>
+				className='bg-purpledark max-w-[220px] rounded-md p-3 self-center font-bold'>
 				<button>Download resume RU</button>
 			</a>
 		</div>

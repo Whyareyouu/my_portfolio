@@ -6,7 +6,7 @@ export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
 		<footer
 			className={cn(className, 'flex justify-between items-center text-base')}
 			{...props}>
-			<p>
+			<p className='font-bold'>
 				Was inspired by the design of{' '}
 				<a
 					href='https://github.com/soumyajit4419'
@@ -16,7 +16,7 @@ export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
 					Soumyajit Behera
 				</a>
 			</p>
-			<h3 className='text-center'>Copyright © 2023</h3>
+			<h3 className='text-center font-bold'>Copyright © 2023</h3>
 			<Socials border='none' />
 		</footer>
 	);

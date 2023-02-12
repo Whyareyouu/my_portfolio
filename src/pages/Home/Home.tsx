@@ -14,13 +14,14 @@ export const Home = ({ className, ...props }: HomeProps): JSX.Element => {
 			<div className='flex justify-between gap-3'>
 				<div className='flex flex-col gap-4 text-4xl'>
 					<h1
+						className='font-bold'
 						style={{
 							textShadow:
 								'2px -2px 0px #47319c, -2px 2px 0px #47319c, -2px -2px 0px #47319c, 2px 2px 0px #47319c, 0px -2px 0px #47319c, 0px 2px 0px #47319c, 2px 0px 0px #47319c, -2px 0px 0px #47319c',
 						}}>
 						Hi There!
 					</h1>
-					<p className='uppercase mb-9'>
+					<p className='uppercase mb-9 font-bold'>
 						I'M <span className='text-purple'>Chernov Nikita</span>
 					</p>
 					<Printed />
@@ -33,7 +34,7 @@ export const Home = ({ className, ...props }: HomeProps): JSX.Element => {
 			</div>
 			<div className='flex justify-between items-center gap-3'>
 				<div className='max-w-[530px] flex flex-col gap-4'>
-					<h2 className='uppercase text-4xl'>
+					<h2 className='uppercase text-4xl font-bold'>
 						A little <span className='text-purple'>about me</span>
 					</h2>
 					<p className='text-lg'>
@@ -53,7 +54,7 @@ export const Home = ({ className, ...props }: HomeProps): JSX.Element => {
 				/>
 			</div>
 			<div className='flex flex-col justify-center items-center gap-4'>
-				<h2 className='text-4xl'>Get In Touch</h2>
+				<h2 className='text-4xl font-bold'>Get In Touch</h2>
 				<p className='max-w-[480px] text-center'>
 					Whether you have a question or just want to say hi, I’ll try my best
 					to get back to you!
