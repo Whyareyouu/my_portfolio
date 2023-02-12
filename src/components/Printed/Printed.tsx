@@ -1,6 +1,6 @@
 import { PrintedProps } from './Printed.props';
 import Typewriter from 'typewriter-effect';
-export const Printed = ({ ...props }: PrintedProps) => {
+export const Printed = ({ ...props }: PrintedProps): JSX.Element => {
 	return (
 		<Typewriter
 			options={{

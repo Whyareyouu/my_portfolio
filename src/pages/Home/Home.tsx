@@ -59,7 +59,7 @@ export const Home = ({ className, ...props }: HomeProps): JSX.Element => {
 					to get back to you!
 				</p>
 				<div>
-					<Socials />
+					<Socials border='yes' />
 				</div>
 			</div>
 		</div>

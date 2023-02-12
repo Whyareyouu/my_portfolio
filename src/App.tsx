@@ -4,7 +4,7 @@ import { About, Home, NotFoundPage, Projects, Resume } from './pages';
 
 function App() {
 	return (
-		<div className='App container'>
+		<div className='container'>
 			<Layout>
 				<Routes>
 					<Route path='/' element={<Home />} />
