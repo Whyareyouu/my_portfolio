@@ -4,3 +4,6 @@ export * from './Socials/Socials';
 export * from './ResumeFile/ResumeFile';
 export * from './GitHubActivity/GitHubActivity';
 export * from './Skills/Skills';
+export * from './Input/Input';
+export * from './TextArea/TextArea';
+export * from './Form/Form';

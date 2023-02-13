@@ -13,7 +13,7 @@ export const About = ({ className, ...props }: AboutProps): JSX.Element => {
 						perspective.
 					</p>
 					<p>My hobbies:</p>
-					<ul className='ml-6'>
+					<ul className='ml-8 list-disc'>
 						<li>Watching anime (my favorite is Hunter x Hunter);</li>
 						<li>Listening to music;</li>
 						<li>Play games;</li>
