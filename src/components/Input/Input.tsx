@@ -3,18 +3,28 @@ import { InputProps } from './Input.props';
 import cn from 'classnames';
 export const Input = forwardRef(
 	(
-		{ className, ...props }: InputProps,
+		{ error, className, ...props }: InputProps,
 		ref: ForwardedRef<HTMLInputElement>
 	): JSX.Element => {
 		return (
-			<input
-				className={cn(
-					className,
-					'rounded-lg bg-purple p-2 max-w-[420px] text-lg font-medium placeholder:text-[#eae9f4]'
+			<div className='flex flex-col max-w-[420px] items-center justify-center w-full gap-2'>
+				<input
+					className={cn(
+						className,
+						'rounded-lg bg-purple p-2 text-lg placeholder:text-[#eae9f4]'
+					)}
+					ref={ref}
+					{...props}
+				/>
+				{error && (
+					<span
+						className={cn('block text-red text-lg font-bold', {
+							' hidden': !error.message,
+						})}>
+						{error.message}
+					</span>
 				)}
-				ref={ref}
-				{...props}
-			/>
+			</div>
 		);
 	}
 );

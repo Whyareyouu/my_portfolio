@@ -12,6 +12,7 @@ module.exports = {
 			white: '#ffffff',
 			'bubble-gum': '#ff77e9',
 			bluedark: '#1e3078',
+			red: '#ff0303',
 		},
 		extend: {},
 	},
