@@ -3,15 +3,29 @@ import { TextArea } from '../TextArea/TextArea';
 import { FormProps } from './Form.props';
 import cn from 'classnames';
 import { useForm } from 'react-hook-form';
-import { IFormContact } from '../../interfaces/Form.interface';
+import { IFormContact, IFormResponse } from '../../interfaces/Form.interface';
+import { useState } from 'react';
+import axios from 'axios';
 export const Form = ({ className, ...props }: FormProps): JSX.Element => {
+	const [succes, setSucces] = useState<boolean>(false);
+	const [error, setError] = useState<string>('');
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
+		reset,
 	} = useForm<IFormContact>({ mode: 'onBlur' });
-	const onSubmit = (data: any) => {
-		console.log(data);
+	const onSubmit = async (formData: IFormContact) => {
+		const data = await axios.post<IFormResponse>(
+			'http://localhost:5000/contact',
+			formData
+		);
+		if (data.status === 200) {
+			setSucces(true);
+			reset();
+		} else {
+			setError('Failed to send message');
+		}
 	};
 	return (
 		<form
@@ -32,17 +46,18 @@ export const Form = ({ className, ...props }: FormProps): JSX.Element => {
 				})}
 				className='w-full'
 				error={errors.email}
+				type='email'
 			/>
 			<Input
-				placeholder='Title'
-				{...register('title', {
+				placeholder='Theme'
+				{...register('theme', {
 					required: {
 						value: true,
 						message: 'This field is required',
 					},
 				})}
 				className='w-full'
-				error={errors.title}
+				error={errors.theme}
 			/>
 			<TextArea
 				placeholder='Message text'
@@ -55,9 +70,17 @@ export const Form = ({ className, ...props }: FormProps): JSX.Element => {
 				className='w-full'
 				error={errors.message}
 			/>
-			<button className=' bg-purple rounded-md px-6 py-3 text-xl font-medium'>
+			<button className='bg-purple rounded-md px-6 py-3 text-xl font-medium'>
 				Send message
 			</button>
+			<div className={cn('block', { ' hidden': !succes })}>
+				<span className='text-green text-2xl'>
+					Your message has been sent successfully
+				</span>
+			</div>
+			<div className={cn('block', { ' hidden': !error })}>
+				<span className='text-red text-lg font-bold'>{error}</span>
+			</div>
 		</form>
 	);
 };

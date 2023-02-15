@@ -13,6 +13,7 @@ module.exports = {
 			'bubble-gum': '#ff77e9',
 			bluedark: '#1e3078',
 			red: '#ff0303',
+			green: '#26ed07',
 		},
 		extend: {},
 	},

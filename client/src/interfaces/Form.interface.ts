@@ -1,5 +1,8 @@
 export interface IFormContact {
 	email: string;
-	title: string;
+	theme: string;
 	message: string;
+}
+export interface IFormResponse {
+	status: number;
 }
