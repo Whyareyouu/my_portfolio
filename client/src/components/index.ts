@@ -7,3 +7,4 @@ export * from './Skills/Skills';
 export * from './Input/Input';
 export * from './TextArea/TextArea';
 export * from './Form/Form';
+export * from './ProjectCard/ProjectcCard';
