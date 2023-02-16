@@ -1,12 +1,24 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
+import mongoose from 'mongoose';
 import cors from 'cors';
 import * as nodemailer from 'nodemailer';
+import ProjectModel from './Models/Project.js';
+mongoose
+	.connect(process.env.DB_LINK)
+	.then(() => {
+		console.log('DB ok');
+	})
+	.catch((err) => {
+		console.log('DB error', err);
+	});
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
+
 app.post('/contact', (req, res) => {
 	try {
 		const transporter = nodemailer.createTransport({
@@ -34,7 +46,46 @@ app.post('/contact', (req, res) => {
 		res.status(400).send('Failed to send message');
 	}
 });
+app.get('/projects', async (req, res) => {
+	try {
+		const projects = await ProjectModel.find().exec();
+		res.json(projects);
+	} catch (error) {
+		console.log(error);
+		res.status(500).json({
+			message: 'Failed to get projects',
+		});
+	}
+}); //get all projects
+app.post('/projects', async (req, res) => {
+	if (
+		req.body.username === process.env.USER &&
+		req.body.password === process.env.USER_PASSWORD
+	) {
+		try {
+			const doc = new ProjectModel({
+				title: req.body.title,
+				description: req.body.description,
+				imageUrl: req.body.imageUrl,
+				tags: req.body.tags,
+				linkGitHub: req.body.linkGitHub,
+				linkDemo: req.body.linkDemo,
+			});
 
+			const projects = await doc.save();
+			res.json(projects);
+		} catch (error) {
+			console.log(error);
+			res.status(500).json({
+				message: 'Failed to create a project',
+			});
+		}
+	} else {
+		return res.status(403).json({
+			message: "You don't have access",
+		});
+	}
+});
 app.listen(PORT, (err) => {
 	if (err) {
 		return console.log(err);
