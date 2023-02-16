@@ -2,6 +2,7 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
 import mongoose from 'mongoose';
+import multer from 'multer';
 import cors from 'cors';
 import * as nodemailer from 'nodemailer';
 import ProjectModel from './Models/Project.js';
@@ -15,9 +16,20 @@ mongoose
 	});
 
 const app = express();
+const storage = multer.diskStorage({
+	destination: (_, __, cb) => {
+		cb(null, 'uploads');
+	},
+	filename: (_, file, cb) => {
+		cb(null, file.originalname);
+	},
+});
+
+const upload = multer({ storage });
 const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(cors());
+app.use('/uploads', express.static('uploads'));
 
 app.post('/contact', (req, res) => {
 	try {
@@ -57,7 +69,7 @@ app.get('/projects', async (req, res) => {
 		});
 	}
 }); //get all projects
-app.post('/projects', async (req, res) => {
+app.post('/projects', upload.single('imageURL'), async (req, res) => {
 	if (
 		req.body.username === process.env.USER &&
 		req.body.password === process.env.USER_PASSWORD
@@ -66,7 +78,8 @@ app.post('/projects', async (req, res) => {
 			const doc = new ProjectModel({
 				title: req.body.title,
 				description: req.body.description,
-				imageUrl: req.body.imageUrl,
+				// imageUrl: req.body.imageUrl,
+				imageUrl: `/uploads/${req.file.originalname}`,
 				tags: req.body.tags,
 				linkGitHub: req.body.linkGitHub,
 				linkDemo: req.body.linkDemo,
