@@ -10,7 +10,7 @@ export const ProjectCard = ({
 		<div
 			className={cn(
 				className,
-				'flex flex-col max-w-md justify-center items-center gap-2 rounded-md shadow-md shadow-purpledark mt-6 p-4'
+				'flex flex-col max-w-md justify-center items-center gap-2 rounded-md shadow-lg shadow-purpledark p-4'
 			)}
 			{...props}>
 			<img
@@ -19,6 +19,13 @@ export const ProjectCard = ({
 				className='rounded-lg'
 			/>
 			<h2 className='text-xl font-medium'>{title}</h2>
+			<div>
+				{tags.map((tag, index) => (
+					<span key={index} className='text-sm'>
+						{tag.replaceAll(',', ' | ')}
+					</span>
+				))}
+			</div>
 			<p className='text-justify'>{description}</p>
 			<div className='flex justify-center items-start gap-3'>
 				<a
