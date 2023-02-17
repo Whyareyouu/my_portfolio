@@ -4,7 +4,7 @@ export interface IProject {
 	tags: string[];
 	imageUrl: string;
 	linkGitHub: string;
-	linkDemo: string;
+	linkDemo?: string;
 	_id: string;
 	__v: number;
 }

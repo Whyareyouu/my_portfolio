@@ -11,18 +11,25 @@ export const Projects = ({
 }: ProjectsProps): JSX.Element => {
 	const [projects, setProjects] = useState<IProject[] | null>(null);
 	useEffect(() => {
-		const data = axios
+		axios
 			.get('http://localhost:5000/projects')
 			.then((response) => setProjects(response.data));
 	}, []);
 	if (projects) {
 		return (
-			<div className={cn(className, 'px-8 py-4')} {...props}>
-				{projects &&
-					projects.map((project) => (
+			<>
+				<h1 className='text-4xl font-bold text-center mb-4'>My pet-project</h1>
+				<div
+					className={cn(
+						className,
+						'flex flex-wrap justify-center gap-8 px-8 py-4 gap-y-6'
+					)}
+					{...props}>
+					{projects.map((project) => (
 						<ProjectCard project={project} key={project._id} />
 					))}
-			</div>
+				</div>
+			</>
 		);
 	} else {
 		return (

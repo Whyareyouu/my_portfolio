@@ -10,7 +10,7 @@ export const ProjectCard = ({
 		<div
 			className={cn(
 				className,
-				'flex flex-col max-w-md justify-center items-center gap-2 rounded-md shadow-lg shadow-purpledark p-4'
+				'flex flex-col max-w-md justify-start items-center gap-2 border-[1px] border-purpledark rounded-md shadow-lg shadow-purpledark p-4 '
 			)}
 			{...props}>
 			<img
@@ -19,7 +19,7 @@ export const ProjectCard = ({
 				className='rounded-lg'
 			/>
 			<h2 className='text-xl font-medium'>{title}</h2>
-			<div>
+			<div className='text-center'>
 				{tags.map((tag, index) => (
 					<span key={index} className='text-sm'>
 						{tag.replaceAll(',', ' | ')}
@@ -36,11 +36,11 @@ export const ProjectCard = ({
 					GitHub
 				</a>
 				<a
-					href={linkDemo}
+					href={linkDemo ? linkDemo : '#'}
 					className='bg-purpledark rounded-md px-3 py-2 self-center'
 					target='_blank'
 					rel='noreferrer'>
-					Demo
+					{linkDemo ? 'Demo' : 'In development'}
 				</a>
 			</div>
 		</div>
