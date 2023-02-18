@@ -6,6 +6,7 @@ import { HandySvg } from 'handy-svg';
 import { SocialsProps } from './Socials.props';
 export const Socials = ({
 	border = 'yes',
+	type = 'default',
 	...props
 }: SocialsProps): JSX.Element => {
 	return (
@@ -14,7 +15,7 @@ export const Socials = ({
 				<HandySvg
 					className={`${
 						border === 'yes' ? 'border-4 border-purpledark' : ''
-					} p-2 rounded-full`}
+					} p-2 rounded-full ${type === 'footer' ? 'md:w-5 md:p-0' : ''}`}
 					src={GmailIcon}
 					width={46}
 					height={46}
@@ -24,7 +25,7 @@ export const Socials = ({
 				<HandySvg
 					className={`${
 						border === 'yes' ? 'border-4 border-purpledark' : ''
-					} p-2 rounded-full`}
+					} p-2 rounded-full ${type === 'footer' ? 'md:w-5 md:p-0' : ''}`}
 					src={GitHubIcon}
 					width={46}
 					height={46}
@@ -34,7 +35,7 @@ export const Socials = ({
 				<HandySvg
 					className={`${
 						border === 'yes' ? 'border-4 border-purpledark' : ''
-					} p-2 rounded-full`}
+					} p-2 rounded-full ${type === 'footer' ? 'md:w-5 md:p-0' : ''}`}
 					src={VkIcon}
 					width={46}
 					height={46}
@@ -44,7 +45,7 @@ export const Socials = ({
 				<HandySvg
 					className={`${
 						border === 'yes' ? 'border-4 border-purpledark' : ''
-					} p-2 rounded-full`}
+					} p-2 rounded-full ${type === 'footer' ? 'md:w-5 md:p-0' : ''}`}
 					src={TGIcon}
 					width={46}
 					height={46}

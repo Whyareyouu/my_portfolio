@@ -5,7 +5,9 @@ import ResumeEN from '../../assets/resumeEN.pdf';
 import ResumeRU from '../../assets/resumeRU.pdf';
 export const Resume = ({ className, ...props }: ResumeProps): JSX.Element => {
 	return (
-		<div className={cn(className, 'flex flex-col gap-4 text-lg')} {...props}>
+		<div
+			className={cn(className, 'flex flex-col gap-4 text-lg max-h-full')}
+			{...props}>
 			<a
 				href={ResumeEN}
 				download

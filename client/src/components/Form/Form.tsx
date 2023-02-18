@@ -18,7 +18,7 @@ export const Form = ({ className, ...props }: FormProps): JSX.Element => {
 	const onSubmit = async (formData: IFormContact) => {
 		try {
 			const data = await axios.post<IFormResponse>(
-				'http://localhost:5000/contact',
+				'https://my-portfolio-nine-smoky-71.vercel.app/contact',
 				formData
 			);
 			if (data.status === 200) {

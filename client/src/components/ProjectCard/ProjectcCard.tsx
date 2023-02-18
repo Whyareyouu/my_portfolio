@@ -10,7 +10,7 @@ export const ProjectCard = ({
 		<div
 			className={cn(
 				className,
-				'flex flex-col max-w-md justify-start items-center gap-2 border-[1px] border-purpledark rounded-md shadow-lg shadow-purpledark p-4 '
+				'flex flex-col max-w-md justify-start items-center gap-2 border-[1px] border-purpledark rounded-md shadow-lg shadow-purpledark p-4 md:p-2 '
 			)}
 			{...props}>
 			<img

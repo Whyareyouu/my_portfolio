@@ -7,6 +7,7 @@ export const ResumeFile = ({ ...props }: ResumeProps): JSX.Element => {
 		<div className='flex justify-center' {...props}>
 			<Document className='relative' file={resume} externalLinkTarget='_blank'>
 				<Page
+					className='md:max-w-[320px]'
 					pageNumber={1}
 					renderTextLayer={false}
 					renderAnnotationLayer={false}

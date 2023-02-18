@@ -27,13 +27,15 @@ export const About = ({ className, ...props }: AboutProps): JSX.Element => {
 				/>
 			</div>
 			<div>
-				<h2 className='text-center text-3xl font-bold mb-6'>
+				<h2 className='text-center text-3xl font-bold mb-6 lg:text-2xl'>
 					Technical Skills
 				</h2>
 				<Skills />
 			</div>
 			<div className='self-center pb-4'>
-				<h2 className='text-center text-3xl font-bold mb-6'>Days | Code</h2>
+				<h2 className='text-center text-3xl font-bold mb-6 lg:text-2xl'>
+					Days | Code
+				</h2>
 				<GitHubActivity />
 			</div>
 		</div>

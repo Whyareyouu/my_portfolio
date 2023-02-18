@@ -12,7 +12,7 @@ export const Projects = ({
 	const [projects, setProjects] = useState<IProject[] | null>(null);
 	useEffect(() => {
 		axios
-			.get('http://localhost:5000/projects')
+			.get('https://my-portfolio-nine-smoky-71.vercel.app/projects')
 			.then((response) => setProjects(response.data));
 	}, []);
 	if (projects) {
