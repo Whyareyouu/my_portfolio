@@ -4,7 +4,10 @@ import { Socials } from '../../components';
 export const Footer = ({ className, ...props }: FooterProps): JSX.Element => {
 	return (
 		<footer
-			className={cn(className, 'flex justify-between items-center text-base')}
+			className={cn(
+				className,
+				'flex justify-between items-center text-base sm:hidden'
+			)}
 			{...props}>
 			<p className='font-bold'>
 				Was inspired by the design of{' '}

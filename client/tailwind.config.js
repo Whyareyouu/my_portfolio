@@ -6,6 +6,11 @@ module.exports = {
 			center: true,
 			padding: '20px',
 		},
+		screens: {
+			lg: { max: '992px' },
+			md: { max: '768px' },
+			sm: { max: '480px' },
+		},
 		colors: {
 			purple: '#7685f5',
 			purpledark: '#701786',

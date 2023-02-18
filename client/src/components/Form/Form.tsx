@@ -16,14 +16,16 @@ export const Form = ({ className, ...props }: FormProps): JSX.Element => {
 		reset,
 	} = useForm<IFormContact>({ mode: 'onBlur' });
 	const onSubmit = async (formData: IFormContact) => {
-		const data = await axios.post<IFormResponse>(
-			'http://localhost:5000/contact',
-			formData
-		);
-		if (data.status === 200) {
-			setSucces(true);
-			reset();
-		} else {
+		try {
+			const data = await axios.post<IFormResponse>(
+				'http://localhost:5000/contact',
+				formData
+			);
+			if (data.status === 200) {
+				setSucces(true);
+				reset();
+			}
+		} catch (err) {
 			setError('Failed to send message');
 		}
 	};

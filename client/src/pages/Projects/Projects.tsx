@@ -18,12 +18,9 @@ export const Projects = ({
 	if (projects) {
 		return (
 			<>
-				<h1 className='text-4xl font-bold text-center mb-4'>My pet-project</h1>
+				<h1 className='text-4xl font-bold text-center my-6'>My pet-projects</h1>
 				<div
-					className={cn(
-						className,
-						'flex flex-wrap justify-center gap-8 px-8 py-4 gap-y-6'
-					)}
+					className={cn(className, 'flex flex-wrap justify-center gap-8 px-8 ')}
 					{...props}>
 					{projects.map((project) => (
 						<ProjectCard project={project} key={project._id} />
