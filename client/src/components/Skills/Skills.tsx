@@ -12,7 +12,7 @@ import GitIcon from './icons/git.svg';
 import { motion } from 'framer-motion';
 export const Skills = (): JSX.Element => {
 	return (
-		<div className='grid grid-cols-5 grid-rows-2 items-center justify-items-center gap-y-4'>
+		<div className='grid grid-cols-5 items-center justify-items-center gap-y-4 el:grid-cols-4 lg:grid-cols-3 md:flex md:flex-wrap md:gap-6 md:justify-center'>
 			<motion.div
 				whileHover={{
 					scale: 1.1,
