@@ -14,7 +14,7 @@ export const ProjectCard = ({
 			)}
 			{...props}>
 			<img
-				src={`http://localhost:5000${imageUrl}`}
+				src={`https://my-portfolio-nine-smoky-71.vercel.app${imageUrl}`}
 				alt='preview'
 				className='rounded-lg'
 			/>

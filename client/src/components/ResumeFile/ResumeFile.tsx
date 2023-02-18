@@ -1,6 +1,6 @@
 import React from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack5';
-import resume from '../../assets/resumeEN.pdf';
+import resume from './resumeEN.pdf';
 import { ResumeProps } from '../../pages/Resume/Resume.props';
 export const ResumeFile = ({ ...props }: ResumeProps): JSX.Element => {
 	return (
