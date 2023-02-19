@@ -6,7 +6,7 @@ export const Contact = ({ className, ...props }: ContactProps): JSX.Element => {
 		<div
 			className={cn(
 				className,
-				'flex flex-col gap-4 justify-center items-center py-6'
+				'flex flex-col gap-4 justify-center items-center py-6 px-3'
 			)}
 			{...props}>
 			<h1 className='font-bold text-4xl'>Get in touch</h1>

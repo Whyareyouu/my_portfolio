@@ -17,16 +17,19 @@ export const Projects = ({
 	}, []);
 	if (projects) {
 		return (
-			<>
+			<div>
 				<h1 className='text-4xl font-bold text-center my-6'>My pet-projects</h1>
 				<div
-					className={cn(className, 'flex flex-wrap justify-center gap-8 px-8 ')}
+					className={cn(
+						className,
+						'flex flex-wrap justify-center gap-8 px-8  py-4'
+					)}
 					{...props}>
 					{projects.map((project) => (
 						<ProjectCard project={project} key={project._id} />
 					))}
 				</div>
-			</>
+			</div>
 		);
 	} else {
 		return (

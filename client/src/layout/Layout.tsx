@@ -7,7 +7,9 @@ export const Layout = ({ children, ...props }: LayoutProps): JSX.Element => {
 	return (
 		<div className='wrapper' {...props}>
 			<Header className='header' />
-			<main className='bg-bluedark/[0.6] rounded-xl p-3 main'>{children}</main>
+			<main className='bg-bluedark/[0.6] rounded-xl p-3 main md:p-0'>
+				{children}
+			</main>
 			<Footer className='footer' />
 		</div>
 	);

@@ -8,7 +8,7 @@ export const Resume = ({ className, ...props }: ResumeProps): JSX.Element => {
 		<div
 			className={cn(
 				className,
-				'flex flex-col gap-4 text-lg max-h-full md:text-base'
+				'flex flex-col gap-4 text-lg max-h-full md:text-base py-4'
 			)}
 			{...props}>
 			<a
