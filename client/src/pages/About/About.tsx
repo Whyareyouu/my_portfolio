@@ -7,7 +7,9 @@ export const About = ({ className, ...props }: AboutProps): JSX.Element => {
 		<div className={cn(className, 'flex flex-col gap-5')} {...props}>
 			<div className='flex gap-2 px-10 py-4 text-xl items-start justify-between md:flex-col md:justify-center md:items-center md:gap-3'>
 				<div className='flex flex-col gap-3 max-w-[520px] md:max-w-full md:items-center md:justify-center'>
-					<h1 className='text-3xl font-bold mb-2 lg:text-2xl'>Who am I</h1>
+					<h1 className='text-3xl font-bold mb-2 lg:text-2xl'>
+						Who <span className='text-purple'>am I</span>
+					</h1>
 					<p className='lg:text-base md:text-xl md:text-center sm:text-base'>
 						Hello everyone, I am a beginning Frontend developer, BUT extremely
 						perspective.
@@ -28,13 +30,13 @@ export const About = ({ className, ...props }: AboutProps): JSX.Element => {
 			</div>
 			<div>
 				<h2 className='text-center text-3xl font-bold mb-6 lg:text-2xl'>
-					Technical Skills
+					Technical <span className='text-purple'>Skills</span>
 				</h2>
 				<Skills />
 			</div>
 			<div className='self-center pb-4'>
 				<h2 className='text-center text-3xl font-bold mb-6 lg:text-2xl'>
-					Days | Code
+					<span className='text-purple'>Days </span> | Code
 				</h2>
 				<GitHubActivity className='sm:px-2' />
 			</div>

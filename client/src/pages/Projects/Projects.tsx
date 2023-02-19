@@ -18,7 +18,9 @@ export const Projects = ({
 	if (projects) {
 		return (
 			<div>
-				<h1 className='text-4xl font-bold text-center my-6'>My pet-projects</h1>
+				<h1 className='text-4xl font-bold text-center my-6'>
+					My <span className='text-purple'>pet-projects</span>
+				</h1>
 				<div
 					className={cn(
 						className,

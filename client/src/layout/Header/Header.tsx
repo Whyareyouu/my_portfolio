@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import CloseIcon from './close.svg';
 import OpenIcon from './open.svg';
+import './Header.css';
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 	const [menu, setMenu] = useState<boolean>(false);
 	return (
@@ -19,7 +20,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 			{...props}>
 			<img src={Logo} alt='Logo' className='w-16 md:w-12' />
 			<ul className='flex gap-6 text-lg md:hidden'>
-				<li>
+				<li className='animate'>
 					<Link className='flex gap-2 md:gap-1' to='/'>
 						<HandySvg
 							src={HomeIcon}
@@ -30,7 +31,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 						<span>Home</span>
 					</Link>
 				</li>
-				<li>
+				<li className='animate'>
 					<Link className='flex gap-2 md:gap-1' to='/about'>
 						<HandySvg
 							src={ProfileIcon}
@@ -41,7 +42,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 						<span>About</span>
 					</Link>
 				</li>
-				<li>
+				<li className='animate'>
 					<Link className='flex gap-2 md:gap-1' to='/projects'>
 						<HandySvg
 							src={ProjectsIcon}
@@ -52,7 +53,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 						<span>Projects</span>
 					</Link>
 				</li>
-				<li>
+				<li className='animate'>
 					<Link className='flex gap-2 md:gap-1' to='/contact'>
 						<HandySvg
 							src={ContactIcon}
@@ -63,7 +64,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 						<span>Contact</span>
 					</Link>
 				</li>
-				<li>
+				<li className='animate'>
 					<Link className='flex gap-2 md:gap-1' to='/resume'>
 						<HandySvg
 							src={ResumeIcon}
