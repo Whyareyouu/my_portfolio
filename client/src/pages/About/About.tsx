@@ -36,7 +36,7 @@ export const About = ({ className, ...props }: AboutProps): JSX.Element => {
 				<h2 className='text-center text-3xl font-bold mb-6 lg:text-2xl'>
 					Days | Code
 				</h2>
-				<GitHubActivity />
+				<GitHubActivity className='sm:px-2' />
 			</div>
 		</div>
 	);

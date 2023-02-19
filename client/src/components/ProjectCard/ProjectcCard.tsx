@@ -1,11 +1,13 @@
 import cn from 'classnames';
+import { Images } from '../../assets/uploads/helper';
 import { ProjectCardProps } from './ProjectcCard.props';
 export const ProjectCard = ({
 	className,
 	project,
+	index,
 	...props
 }: ProjectCardProps): JSX.Element => {
-	const { title, description, tags, imageUrl, linkGitHub, linkDemo } = project;
+	const { title, description, tags, linkGitHub, linkDemo } = project;
 	return (
 		<div
 			className={cn(
@@ -13,11 +15,7 @@ export const ProjectCard = ({
 				'flex flex-col max-w-md justify-start items-center gap-2 border-[1px] border-purpledark rounded-md shadow-lg shadow-purpledark p-4 md:p-2 '
 			)}
 			{...props}>
-			<img
-				src={`https://my-portfolio-nine-smoky-71.vercel.app${imageUrl}`}
-				alt='preview'
-				className='rounded-lg'
-			/>
+			<Images index={index} />
 			<h2 className='text-xl font-medium'>{title}</h2>
 			<div className='text-center'>
 				{tags.map((tag, index) => (

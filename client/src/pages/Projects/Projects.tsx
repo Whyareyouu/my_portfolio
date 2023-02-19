@@ -25,8 +25,8 @@ export const Projects = ({
 						'flex flex-wrap justify-center gap-8 px-8  py-4'
 					)}
 					{...props}>
-					{projects.map((project) => (
-						<ProjectCard project={project} key={project._id} />
+					{projects.map((project, index) => (
+						<ProjectCard project={project} key={project._id} index={index} />
 					))}
 				</div>
 			</div>
